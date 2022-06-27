@@ -1,9 +1,9 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=minieap
-PKG_VERSION:=0.93
+PKG_VERSION:=0.93.1
 PKG_RELEASE:=1
-PKG_MAINTAINER:=KumaTea <KumaTea@outlook.com>
+PKG_MAINTAINER:=Editst <i@editst.com>
 PKG_LICENSE:=GPLv3
 PKG_LICENSE_FILES:=LICENSE
 
@@ -30,6 +30,9 @@ define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/lib/netifd/proto
 	$(INSTALL_BIN) ./files/minieap.sh $(1)/lib/netifd/proto/
 	$(INSTALL_BIN) ./files/minieap.script $(1)/lib/netifd/
+
+	$(INSTALL_DIR) $(1)/etc/init.d
+	$(INSTALL_BIN) ./files/minieap $(1)/etc/init.d/
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))
