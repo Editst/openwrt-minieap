@@ -13,4 +13,4 @@ make package/minieap/compile V=s
 
 ## SYSU Config
 
-`minieap -u netid -p password -n eth0 -e 20 -d 0 -b 3 -w`
+`minieap -u netid -p password -n eth0 --module rjv3 -e 20 -d 0 -b 3 -w`
